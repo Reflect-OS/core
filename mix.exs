@@ -45,7 +45,7 @@ defmodule ReflectOS.Core.MixProject do
       {:font_metrics, "~> 0.5"},
 
       # LiveView
-      {:phoenix_live_view, "~> 1.0.0-rc.1", override: true},
+      {:phoenix_live_view, "~> 1.0.0-rc.7"},
 
       # ReflectOS Kernel
       {:reflect_os_kernel, "~> 0.10.0"},
