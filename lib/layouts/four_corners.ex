@@ -524,6 +524,7 @@ defmodule ReflectOS.Core.Layouts.FourCorners do
 
     {graph, _, _} =
       section_bounds
+      |> Enum.reverse()
       |> Enum.reduce({graph, start_index, start_y}, fn {left, top, _right, bottom},
                                                        {graph, index, y} ->
         section_height = bottom - top
