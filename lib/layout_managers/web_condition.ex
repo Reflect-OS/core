@@ -19,7 +19,14 @@ defmodule ReflectOS.Core.LayoutManagers.WebCondition do
         The Web Condition layout manager allows your system to change the active layout based
         on any publicly available web page.  For example, you could use a weather page to change
         the layout based on whether the page contains the word "rain".  Additionally, you could use
-        a service like <a href="https://ifttt.com/explore" target="_blank">IFTTT</a> (If This Then That)
+        a service like
+        <a
+          class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+          href="https://ifttt.com/explore"
+          target="_blank"
+        >
+          IFTTT
+        </a> (If This Then That)
         to update web content (such as a Google Sheet) based on a trigger.
         """
       end,
