@@ -4,8 +4,9 @@ defmodule ReflectOS.Core.Sections.DateTime do
   alias Scenic.Graph
   import Scenic.Primitives, only: [{:text, 3}]
 
-  import ReflectOS.Kernel.Typography
+  import Phoenix.Component, only: [sigil_H: 2]
 
+  import ReflectOS.Kernel.Typography
   alias ReflectOS.Kernel.Settings.System
   alias ReflectOS.Kernel.Section.Definition
   alias ReflectOS.Kernel.{OptionGroup, Option}
@@ -37,6 +38,13 @@ defmodule ReflectOS.Core.Sections.DateTime do
           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
         </svg>
       """,
+      description: fn assigns ->
+        ~H"""
+        The date/time section is about as straightforward as it gets -
+        just shows a digital clock in either 12 or 24 hour format,
+        and provides a variety of date formats as well.
+        """
+      end,
       auto_align: true
     }
 
