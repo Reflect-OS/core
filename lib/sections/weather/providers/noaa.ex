@@ -51,6 +51,7 @@ defmodule ReflectOS.Core.Sections.Weather.Providers.NOAA do
     [current, hourly, daily] =
       [
         Task.async(fn ->
+          Logger.info(current_weather_url)
           api_get_weather(provider, current_weather_url, &format_current_response/2)
         end),
         Task.async(fn ->
@@ -128,6 +129,11 @@ defmodule ReflectOS.Core.Sections.Weather.Providers.NOAA do
       {:error, error} ->
         {:error, error}
     end
+  end
+
+  defp format_current_response(body, _config) do
+    Logger.error("[Weather - NOAA] Invalid response for current weather, got: #{inspect(body)}")
+    {:error, "Invalid response from NOAA for current weather"}
   end
 
   ##########
