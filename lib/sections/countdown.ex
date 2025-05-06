@@ -210,7 +210,7 @@ defmodule ReflectOS.Core.Sections.Countdown do
 
     [{part1_count, part1_label}, {part2_count, part2_label}, {part3_count, part3_label}] =
       cond do
-        years > 1 ->
+        years >= 1 ->
           [{years, "years"}, {days, "days"}, {hours, "hours"}]
 
         days >= 1 ->
