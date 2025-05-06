@@ -27,7 +27,8 @@ defmodule ReflectOS.Core.Application do
       ReflectOS.Core.Sections.DateTime,
       ReflectOS.Core.Sections.Calendar,
       ReflectOS.Core.Sections.Countdown,
-      ReflectOS.Core.Sections.RssFeed
+      ReflectOS.Core.Sections.RssFeed,
+      ReflectOS.Core.Sections.Note
     ])
 
     # Layouts
