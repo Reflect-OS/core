@@ -8,7 +8,6 @@ defmodule ReflectOS.Core.Sections.Note do
   import Phoenix.Component, only: [sigil_H: 2]
 
   import ReflectOS.Kernel.Typography
-  alias ReflectOS.Kernel.Settings.System
   alias ReflectOS.Kernel.Section.Definition
   alias ReflectOS.Kernel.{OptionGroup, Option}
   import ReflectOS.Kernel.Primitives, only: [render_section_label: 3]
