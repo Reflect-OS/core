@@ -1,6 +1,7 @@
 defmodule ReflectOS.Core.Sections.Calendar.Service do
   require Logger
 
+  require IEx
   alias ICalendar.Event
 
   def all_day_event?(%Event{dtstart: start_time, dtend: end_time}) do
@@ -84,7 +85,16 @@ defmodule ReflectOS.Core.Sections.Calendar.Service do
          |> DateTime.to_date()
          |> DateTime.new!(midnight, timezone)}
       else
-        {DateTime.shift_zone!(start_time, timezone), DateTime.shift_zone!(end_time, timezone)}
+        start_time = DateTime.shift_zone!(start_time, timezone)
+
+        end_time =
+          if end_time != nil do
+            DateTime.shift_zone!(end_time, timezone)
+          else
+            nil
+          end
+
+        {start_time, end_time}
       end
 
     %{event | dtstart: start_time, dtend: end_time}
@@ -184,7 +194,8 @@ defmodule ReflectOS.Core.Sections.Calendar.Service do
 
   defp expand_multiday_event(%Event{dtstart: start_time, dtend: end_time} = event) do
     start_date = DateTime.to_date(start_time)
-    end_date = DateTime.to_date(end_time)
+
+    end_date = if end_time != nil, do: DateTime.to_date(end_time), else: start_date
 
     diff = Date.diff(end_date, start_date)
 
