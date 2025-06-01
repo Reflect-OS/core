@@ -1,5 +1,7 @@
 # Changelog
 
+## v0.10.4
+
 ## v0.10.3
 
 * Fix bug in calendar section for empty end event times
