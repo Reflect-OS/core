@@ -1,5 +1,7 @@
 # Changelog
 
+## v0.10.5
+
 ## v0.10.4
 
 * Additional bug fix for empty end dates in the calendar section
