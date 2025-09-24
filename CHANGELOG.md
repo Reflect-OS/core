@@ -2,6 +2,8 @@
 
 ## v0.10.5
 
+* Bump Phoenix Live View Version
+
 ## v0.10.4
 
 * Additional bug fix for empty end dates in the calendar section
