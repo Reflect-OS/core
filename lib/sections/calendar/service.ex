@@ -4,9 +4,9 @@ defmodule ReflectOS.Core.Sections.Calendar.Service do
   require IEx
   alias ICalendar.Event
 
-  def all_day_event?(%Event{dtstart: start_time, dtend: end_time}) do
+  def all_day_event?(%Event{dtstart: start_time, dtend: end_time} = event) do
     Time.compare(DateTime.to_time(start_time), ~T[00:00:00]) == :eq and
-      Time.compare(DateTime.to_time(end_time), ~T[00:00:00]) == :eq
+      (end_time == nil || Time.compare(DateTime.to_time(end_time), ~T[00:00:00]) == :eq)
   end
 
   def retrieve_calendar_events(ical_urls, timezone) do
@@ -81,9 +81,15 @@ defmodule ReflectOS.Core.Sections.Calendar.Service do
         {start_time
          |> DateTime.to_date()
          |> DateTime.new!(midnight, timezone),
-         end_time
-         |> DateTime.to_date()
-         |> DateTime.new!(midnight, timezone)}
+         if end_time == nil do
+           start_time
+           |> DateTime.to_date()
+           |> DateTime.new!(midnight, timezone)
+         else
+           end_time
+           |> DateTime.to_date()
+           |> DateTime.new!(midnight, timezone)
+         end}
       else
         start_time = DateTime.shift_zone!(start_time, timezone)
 
