@@ -26,7 +26,8 @@ defmodule ReflectOS.Core.LayoutManagers.WebCondition do
           target="_blank"
         >
           IFTTT
-        </a> (If This Then That)
+        </a>
+        (If This Then That)
         to update web content (such as a Google Sheet) based on a trigger.
         """
       end,
