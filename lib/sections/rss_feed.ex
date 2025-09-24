@@ -121,7 +121,8 @@ defmodule ReflectOS.Core.Sections.RssFeed do
             is found. <br /><br /> For example, the
             <a target="_blank" href="https://www.merriam-webster.com/word-of-the-day">
               Merriam-Webster Word of the Day
-            </a> feed has a lot of text after the text <code>[see the entry &gt;]</code>.  This text could be
+            </a>
+            feed has a lot of text after the text <code>[see the entry &gt;]</code>.  This text could be
             used in this field to hide all of the boiler plate.
             """
           end
