@@ -4,7 +4,7 @@ defmodule ReflectOS.Core.Sections.Calendar.Service do
   require IEx
   alias ICalendar.Event
 
-  def all_day_event?(%Event{dtstart: start_time, dtend: end_time} = event) do
+  def all_day_event?(%Event{dtstart: start_time, dtend: end_time}) do
     Time.compare(DateTime.to_time(start_time), ~T[00:00:00]) == :eq and
       (end_time == nil || Time.compare(DateTime.to_time(end_time), ~T[00:00:00]) == :eq)
   end
