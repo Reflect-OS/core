@@ -2,6 +2,8 @@
 
 ## v0.10.4
 
+* Additional bug fix for empty end dates in the calendar section
+
 ## v0.10.3
 
 * Fix bug in calendar section for empty end event times
